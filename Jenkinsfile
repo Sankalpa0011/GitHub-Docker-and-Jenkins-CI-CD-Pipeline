@@ -5,7 +5,8 @@ pipeline {
         stage('SCM Checkout') {
             steps {
                 retry(3) {
-                    git branch: 'main', url: 'https://github.com/Sankalpa0011/test-node'
+                    git branch: 'main', url: 'https://github.com/Sankalpa0011/test-node',
+                    credentialsId: 'github-token'
                 }
             }
         }
